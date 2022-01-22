@@ -1,0 +1,40 @@
+.card {
+  margin: 1em;
+  padding: 2em;
+  box-shadow: 0 0.3em 1.2em rgba(1, 1, 1, 0.23);
+  width: 20%;
+}
+img {
+  width: 64px;
+  height: 64px;
+}
+h1 {
+  font-size: 1.5em;
+}
+p {
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-weight: 600;
+}
+@media screen and (max-width: 1000px) {
+  .card {
+    margin: 0.5em;
+    padding: 2em;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .card {
+    margin: 0.5em;
+    padding: 1.5em;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 0.5em;
+    padding: 1.5em;
+    width: 100%;
+  }
+}

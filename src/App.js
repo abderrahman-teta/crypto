@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {useState,useEffect} from 'react';
+import Crypto from './components/Crypto/Crypto';
 function App() {
+ const [crypto,setCrypto] = useState([])
+
+ useEffect(()=>{
+  fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
+    "method": "GET",
+    "headers": {
+      'X-CMC_PRO_API_KEY': "14dc4138-0ac8-4fdd-82bd-5459a86ea3b0",
+      
+    },
+   
+  })
+  .then(res=>res.json())
+  .then(json=>{
+    setCrypto(json.data)
+  })
+  
+ },[])
+
+ let hasCrypto = crypto.length >0 ;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {hasCrypto? <Crypto crypto={crypto} /> :  <div className="circle"></div>}
+   
     </div>
   );
 }
