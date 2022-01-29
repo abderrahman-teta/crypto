@@ -9,11 +9,12 @@
   scroll-behavior: smooth;
 }
 
-.App {
+.container {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 5em;
 }
 .circle {
   display: flex;
