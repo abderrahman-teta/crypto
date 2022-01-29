@@ -28,10 +28,10 @@ function App() {
  } 
  
  useEffect(()=>{
-  fetch("http://cors-anywhere.herokuapp.com/https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
+  fetch("http://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {
     "method": "GET",
     "headers": {
-      "Access-Control-Allow-Origin":"*",
+      
       'X-CMC_PRO_API_KEY': "14dc4138-0ac8-4fdd-82bd-5459a86ea3b0",
       
       
